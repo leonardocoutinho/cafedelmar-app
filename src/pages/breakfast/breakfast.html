@@ -1,0 +1,38 @@
+<ion-header>
+ <ion-navbar color="primary">
+  <header-component [currentPage]="currentPage" (filterFoods)="filterFood($event)" ></header-component>
+  <!-- <ion-title  class="header-component_title-page" >
+      {{currentPage}}
+    </ion-title>
+      <ion-buttons end class="buttons_header-component">
+      <button ion-button icon-only navPush="Search" [navParams]="{page: currentPage}" >
+          <ion-icon name="search"></ion-icon>
+      </button>
+
+      <button ion-button icon-only (click)="filterFood($event)">
+          <ion-icon name="funnel"></ion-icon>
+      </button>
+   </ion-buttons> -->
+</ion-navbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-card *ngFor="let menuFood of menuFoodsRef$ | async">
+
+      <ion-item>
+        <h2>{{menuFood.title}}</h2>
+        <p>{{menuFood.details}}</p>
+        <button ion-button item-right icon-only outline (tap)="sendFavorites(menuFood)" >
+          Add
+        </button>
+      </ion-item>
+
+      <img *ngIf="menuFood.image" [src]="menuFood.image"/>
+
+      <ion-card-content>
+        <p>{{menuFood.description}}</p>
+      </ion-card-content>
+
+      </ion-card>
+  </ion-content>

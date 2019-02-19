@@ -1,0 +1,8 @@
+<ion-slides pager >
+  <ion-slide *ngFor="let dish of houseDishe$ " (tap)="openModal(dish)" >
+    <img *ngIf="dish.image" [src]="dish.image"/>
+    <div class="card-title">{{ dish.title.length > 32 ? (dish.title | slice:0:32) + ' ...' : (dish.title) }}  </div>
+  </ion-slide>
+</ion-slides>
+
+

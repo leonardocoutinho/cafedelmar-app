@@ -1,0 +1,29 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Dish Day</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <button ion-button full (click)="detectChanges()" color="dark" >Changes</button>
+  <ion-card *ngFor="let dish of dishDayRef" >
+
+    <ion-item (tap)="openModal(dish)">
+      <h2>{{dish.title}}</h2>
+      <p>{{dish.details}}</p>
+      <button ion-button item-right icon-only outline (tap)="sendFavorites(dish)">
+        Add
+      </button>
+    </ion-item>
+
+    <img *ngIf="dish.image" [src]="dish.image" />
+
+    <ion-card-content>
+      <p>{{dish.description}}</p>
+    </ion-card-content>
+
+  </ion-card>
+</ion-content>

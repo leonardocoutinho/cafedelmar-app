@@ -1,0 +1,21 @@
+
+<ion-fab top right>
+    <button ion-fab mini color="danger" (tap)="viewCtrl.dismiss()" >
+        <ion-icon name="close"></ion-icon>
+    </button>
+</ion-fab>
+
+
+<ion-content fullscreen>
+    <ion-card style="box-shadow: 0px 0px 0px 0px; background-color: whitesmoke; ">
+        <img [src]="content?.image" alt="">
+        <ion-card-content>
+          <ion-card-title>
+            {{ content?.title}}
+            </ion-card-title>
+          <p>
+            {{ content?.description }}
+          </p>
+        </ion-card-content>
+      </ion-card>
+</ion-content>

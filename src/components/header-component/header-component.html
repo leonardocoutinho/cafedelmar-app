@@ -1,0 +1,16 @@
+<ion-title  class="header-component_title-page" >
+    {{currentPage}}
+  </ion-title>
+    <ion-buttons end class="buttons_header-component">
+    <button ion-button icon-only navPush="Search" [navParams]="{page: currentPage}" >
+        <ion-icon name="search"></ion-icon>
+    </button>
+
+    <!-- <button ion-button icon-only (click)="filterFood($event)">
+        <ion-icon name="funnel"></ion-icon>
+    </button> -->
+ </ion-buttons>
+
+
+
+

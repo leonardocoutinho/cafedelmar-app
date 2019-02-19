@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Lunch
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-12>
+        <h3>Appetizer</h3>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-slides style="height: 110px; background: #fafafa;" class="image-slider" loop="true" slidesPerView="2">
+    <ion-slide *ngFor="let img of[1, 2, 3, 4, 5]">
+      <img src="../../assets/lunch/lunch{{img}}.jpg" alt="" class="thumb-img" imageViewer>
+    </ion-slide>
+  </ion-slides>
+
+  <hr>
+
+<!-- <ion-card *ngFor="let lunch of lunch1">
+
+  <ion-card-header>
+    {{lunch.title}}
+  </ion-card-header>
+  <ion-card-content>
+    <p>{{lunch.details}}</p>
+  </ion-card-content>
+</ion-card> -->
+
+  <cards-component *ngFor="let lunch of lunch1" [lunchmenu]="lunch"></cards-component>
+</ion-content>

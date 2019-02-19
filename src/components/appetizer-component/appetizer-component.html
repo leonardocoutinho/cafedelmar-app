@@ -1,0 +1,12 @@
+<ion-grid>
+  <ion-row>
+    <ion-col col-12>
+      <h3>Appetizer</h3>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+<ion-slides style="height: 110px; border: 1px solid red; background: #400000;" class="image-slider" loop="true" slidesPerView="2" >
+  <ion-slide *ngFor="let img of[1, 2, 3, 4, 5]">
+    <img src="../../assets/lunch/lunch{{img}}.jpg" alt="" class="thumb-img" imageViewer>
+  </ion-slide>
+</ion-slides>

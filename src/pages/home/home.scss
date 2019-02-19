@@ -1,0 +1,88 @@
+page-home {
+  .scroll-content {
+    padding-top: 0px !important;
+  }
+  .menus {
+    font-family: firasans;
+    font-size: 16px;
+    color: #758692;
+    margin-top: 4px;
+    margin-bottom: -18px;
+  }
+  .menu-grid {
+    // padding: 0;
+    background-color: #fff;
+  }
+  .itm {
+    text-align: center;
+    color: rgb(54, 53, 53);
+    padding: 2px;
+    box-shadow: 1px 1px 1px 1px rgb(236, 236, 236);
+    margin-bottom: 5px;
+    padding-bottom: 7px;
+
+    i {
+      margin-bottom: 10px;
+    }
+  }
+  .home-title {
+    font-family: lato;
+    font-size: 14px;
+    color: #fff;
+    font-weight: bold;
+    margin-bottom: 10px !important;
+    // border: 1px solid black;
+  }
+
+  .categories-img {
+    filter: brightness(60%);
+    display: block;
+    border-radius: 0%;
+  }
+  .card-subtitle {
+    font-family: lato;
+    // font-weight: 300px;
+    font-size: 14px;
+    position: absolute;
+    top: 52%;
+    left: 5%;
+    // width: 100%;
+    color: #fff;
+    font-weight: bolder
+  }
+
+  .titles {
+    font-size: 20px;
+    color: #a1887f;
+  }
+
+  .dish-day {
+
+    ion-card {
+      position: relative;
+      text-align: center;
+
+      img {
+        filter: brightness(85%);
+      }
+    }
+
+    .dish-day-title {
+      position: absolute;
+      top: 16%;
+      font-size: 2.0em;
+      width: 100%;
+      font-weight: bold;
+      color: rgb(0, 0, 0);
+    }
+
+    .dish-day-card-subtitle {
+      font-size: 1.0em;
+      position: absolute;
+      top: 55%;
+      width: 100%;
+      color: rgb(3, 1, 1);
+    }
+
+  }
+}

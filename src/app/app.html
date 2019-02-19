@@ -1,0 +1,56 @@
+<ion-menu [content]="content" id="myMenu">
+  <ion-header *ngIf="!users" no-border>
+    <ion-navbar color="sidemenu">
+      <ion-title>
+        <img src="assets/img/logo_cdm.png" alt="">
+      </ion-title>
+    </ion-navbar>
+  </ion-header>
+
+  <ion-content style="background-color: #96ceb4;">
+    <ion-grid *ngIf="(users | async) || {} as user">
+      <ion-row>
+        <ion-col col-6>
+          <ion-avatar item-start>
+            <img class="circle-pic" [src]="user?.photoURL" alt="">
+          </ion-avatar>
+        </ion-col>
+        <ion-col col-6 text-right>
+          <button *ngIf="user" ion-button icon-only clear color="light" (tap)="signOut()">
+            <ion-icon name="power"></ion-icon>
+          </button>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col style="color: #fff; font-weight: bold;">
+          Welcome: {{ user?.displayName }}
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <hr style="color:#fff">
+    <!-- <br> -->
+
+    <ion-list no-lines>
+
+      <ion-item *ngFor="let p of pages" (tap)="openPage(p)" style="background-color: #96ceb4; color: #fff;">
+
+        <ion-icon item-start style="margin-right: 4px;" [name]="p.icon"></ion-icon>
+
+        <button ion-item detail-none style="background-color: #96ceb4; color: #fff;  font-weight: bold; padding: 0px; font-family: lato;" menuClose  >
+          {{p.title}}
+        </button>
+
+      </ion-item>
+
+    </ion-list>
+
+  </ion-content>
+  <br>
+  <ion-footer text-center>
+    <small style="color: #fff" >Made with <ion-icon name="md-heart-outline"></ion-icon> by <b>Proit-Consulting</b></small>
+  </ion-footer>
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

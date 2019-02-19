@@ -1,0 +1,20 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Search - {{currentPage}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+  <div *ngIf="currentPage === 'Drinks'; else loading">
+      <search-drinks [currentPage]="currentPage" [drinKey]="drinkKey" ></search-drinks>
+  </div>
+
+
+    <ng-template #loading>
+        <search-component [currentPage]="currentPage"  ></search-component>
+    </ng-template>
+
+</ion-content>
+

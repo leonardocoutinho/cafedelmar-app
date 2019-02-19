@@ -1,0 +1,14 @@
+<ion-list radio-group no-lines >
+
+  <ion-item *ngFor="let foods of foodList" >
+      <ion-label> {{ foods.name }} </ion-label>
+      <ion-radio (click)="dismissWithData(foods.type)"></ion-radio>
+  </ion-item>
+
+  <ion-item color="primary" >
+      <ion-label>
+         <ion-icon name="ios-refresh-circle"></ion-icon>
+              Mostrar tudo</ion-label>
+      <ion-radio (click)="viewCtrl.dismiss()" ></ion-radio>
+  </ion-item>
+</ion-list>

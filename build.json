@@ -1,0 +1,11 @@
+{
+  "android": {
+      "release": {
+          "keystore": "cdmkey.keystore",
+          "storePassword": "redes1992",
+          "alias": "cdmalias",
+          "password" : "redes1992",
+          "keystoreType": "JKS"
+      }
+  }
+}

@@ -1,0 +1,25 @@
+<!-- <ion-grid>
+  <ion-row>
+    <ion-col col-12>
+      <h3>Lunch</h3>
+    </ion-col>
+  </ion-row>
+</ion-grid> -->
+
+<ion-card>
+
+    <ion-item>
+      <h2>{{lunchmenu?.title}}</h2>
+      <p>{{lunchmenu?.description}}</p>
+      <button ion-button item-right icon-only outline >
+        Add
+      </button>
+    </ion-item>
+
+    <img *ngIf="lunchmenu?.image" [src]="lunchmenu?.image"/>
+
+    <ion-card-content>
+      <p>{{lunchmenu?.details}}</p>
+    </ion-card-content>
+
+    </ion-card>

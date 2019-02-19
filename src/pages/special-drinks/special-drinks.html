@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <header-component [currentPage]="currentPage" (filterMessage)="filterFood($event)" ></header-component>
+ </ion-navbar>
+ </ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let menuFood of  menuDrinksRef$ | async" >
+    <ion-item>
+      <h2>{{menuFood.title}}</h2>
+      <p>{{menuFood.details}}</p>
+    </ion-item>
+  
+    <img *ngIf="menuFood.image" [src]="menuFood.image" />
+
+    <ion-card-content>
+      <p>{{menuFood.description}}</p>
+    </ion-card-content>
+
+  </ion-card>
+</ion-content>

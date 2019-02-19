@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-navbar color="cdm_secondary">
+    <ion-title>Gallery</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <div class="images">
+    <div class="one-image" *ngFor="let img of images">
+        <img  src="assets/gallery/{{img}}" imageViewer>
+    </div>
+  </div>
+</ion-content>

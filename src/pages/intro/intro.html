@@ -1,0 +1,40 @@
+<ion-slides pager>
+
+  <ion-slide class="profile-view__image-container">
+    <h1 style="color:#fff;"> Bem-Vindo ao <br><strong>Café Del Mar</strong> </h1>
+    <h2 style="color:#fff"> Um conceito único em Luanda </h2>
+  </ion-slide>
+
+
+  <ion-slide class="bg-image">
+    <h3 style="color:#fff;">Desfrute do melhor espaço</h3>
+    <p style="color:#fff;">já conhecido em Luanda</p>
+  </ion-slide>
+
+
+  <ion-slide class="social-image" style="color: #fff">
+    <h3> Connecta a sua rede social favorita ao nosso app </h3>
+    <h2> Partilha imagens do nosso espaço e dos nossos pratos com os teus amigos</h2>
+    <p> Adicione os seus pratos preferidos à secção de favoritos </p>
+  </ion-slide>
+
+
+  <ion-slide style="background-color: #fff">
+    <h2 style="color:dimgray">Login</h2>
+    <!-- <ion-row>
+      <ion-col>
+        <button ion-button round large color="google" (click)="nativeGoogleLogin()">
+          <ion-icon name="logo-google"></ion-icon>
+        </button>
+      </ion-col>
+      <ion-col>
+        <button ion-button round large (click)="signInWithFacebook()" color="facebook">
+          <ion-icon name="logo-facebook"></ion-icon>
+        </button>
+      </ion-col>
+    </ion-row> -->
+    <app-login></app-login>
+    <br>
+    <button ion-button block (click)="closeIntro()"color="primary">Começar</button>
+  </ion-slide>
+</ion-slides>

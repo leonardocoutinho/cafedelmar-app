@@ -1,0 +1,57 @@
+<ion-header no-border>
+  <ion-navbar color="cdm_primary" transparent>
+    <button ion-button menuToggle>
+      <ion-icon name="list" color="dark"></ion-icon>
+    </button>
+  </ion-navbar>
+</ion-header>
+
+<ion-content fullscreen style="background-color:whitesmoke">
+  <home-slide></home-slide>
+  <br>
+
+  <!-- Pratos do dia -->
+<div class="dish-day" (tap)="navToDishDayPage()">
+  <ion-card>
+    <img src="assets/img/logo_cdm.png" alt="">
+    <div class="dish-day-title">Pratos do dia</div>
+    <div class="dish-day-card-subtitle">Toque aqui para ver</div>
+  </ion-card>
+</div>
+
+<ion-grid style="background-color: #fff;">
+
+  <ion-row>
+    <ion-col col-6 class="titles" >Categories</ion-col>
+    <ion-col col-6 text-right style="color: #a1887f" navPush="Menu" >See more...
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col col-6 *ngFor="let category of categories" (tap)="navToPage(category.page)">
+      <img class="categories-img" [src]="category.image" alt="">
+      <p class="card-subtitle"> {{category.title}} </p>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+
+<br>
+
+<ion-list style="background-color: #fff">
+  <ion-grid>
+    <ion-row >
+        <ion-col col-6 class="titles">Menus</ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-item *ngFor="let menu of menus" >
+    <ion-thumbnail item-start>
+        <img [src]="menu.image" alt="">
+    </ion-thumbnail>
+    <h2 style="color: dimgrey" >{{ menu.title }}</h2>
+    <p>{{ menu.subtitle }}</p>
+    <button ion-button clear item-end (tap)="navToPage(menu.page)">View</button>
+  </ion-item>
+</ion-list>
+
+</ion-content>

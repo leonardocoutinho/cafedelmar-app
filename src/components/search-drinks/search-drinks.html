@@ -1,0 +1,7 @@
+<ion-searchbar (ionInput)="searchDrinks($event)" animated="true"></ion-searchbar>
+
+<div *ngFor="let drinksxx of drinksRef$ | async" >
+  <ion-item *ngFor="let drinks of drinksxx.drinkType | async" >
+    <h2> {{ drinks.drink }} </h2>
+  </ion-item>
+</div>

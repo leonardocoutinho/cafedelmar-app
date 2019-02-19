@@ -1,0 +1,39 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Breaking News</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <div *ngFor="let news of newsRef$ | async">
+    <ion-card *ngIf="news.featured === true" style="box-shadow: 0px 0px 0px 0px; background-color: whitesmoke; " (tap)="openModal(news)">
+      <!-- <img *ngIf="news.image" [src]="news.image">
+       -->
+       <img src="http://www.flynight.fr/797-nq_social_share/flyer-party-event-beach-party.jpg" alt="">
+      <ion-card-content>
+        <ion-card-title style="font-weight: bold; font-family: lato;">
+          {{ news.title }}
+          <button text-right ion-button ion-icon clear large outline color="dark">
+            <ion-icon name="ios-star"></ion-icon>
+          </button>
+        </ion-card-title>
+        <p>Posted: {{ news.date | moment }} </p>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+    <ion-list inset no-lines>
+      <ion-item *ngFor="let news of (newsRef$ | async)?.slice().reverse()" [ngClass]="{'ligado': news.featured, 'desligado': !news.featured}" (tap)="openModal(news)">
+        <ion-thumbnail item-end>
+          <!-- <img *ngIf="news.image" [src]="news.image"> -->
+          <img src="http://www.flynight.fr/797-nq_social_share/flyer-party-event-beach-party.jpg" alt="">
+        </ion-thumbnail>
+        <h2> {{ news.title }} </h2>
+        <p>Posted: {{ news.date | moment }} </p>
+      </ion-item>
+    </ion-list>
+
+
+</ion-content>
